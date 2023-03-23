@@ -1,2 +1,13 @@
 @import './common';
-@import './example';
+
+@import './base/variables';
+@import './base/reset';
+@import './base/base';
+
+@import './layuot/header';
+
+@import './components/section-day';
+
+@import './layuot/footer';
+
+@import './components/visually-hidden';

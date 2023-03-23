@@ -1,0 +1,88 @@
+.page_day {
+}
+
+.day {
+}
+
+.day_wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 10px;
+
+  border: 1px solid #c0c0c0;
+  border-radius: 7px;
+}
+
+.day_location-wrap {
+}
+
+.day_location {
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.day_date {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.day_weather {
+  padding: 20px;
+  max-width: 200px;
+  border: 1px solid #c0c0c0;
+  border-radius: 20px;
+}
+
+.day_wind {
+}
+
+.day_rain {
+}
+
+.day_wind-count,
+.day_wind-count {
+}
+
+.day_temperature-wrap {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border: 1px solid #c0c0c0;
+  border-radius: 20px;
+  background-color: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
+}
+
+.day_today {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.day_img {
+}
+
+.day_cloud {
+  text-align: center;
+}
+
+.day_temperature {
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.day_all-temprature {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.day_temperature-hight {
+}
+
+.day_temperature-day {
+}

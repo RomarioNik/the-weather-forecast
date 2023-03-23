@@ -1,0 +1,33 @@
+<article class='page_day day'>
+  <div class='container day_container'>
+    <h1 class='visually-hidden'>The Weather Forecast</h1>
+
+    <div class='day_wrap'>
+      <div class='day_location-wrap'>
+        <h2 class='day_location'>{{this.name}}</h2>
+        <p class='day_date'>Monday, May 23</p>
+        <div class='day_weather'>
+          <p class='day_wind'>
+            Wind:
+            <span class='day_wind-count'>{{this.wind.speed}}</span>km/h
+          </p>
+          <p class='day_rain'>Humidity:
+            <span class='day_rain-count'>{{this.main.humidity}}</span>%</p>
+        </div>
+      </div>
+
+      <div class='day_temperature-wrap'>
+        <p class='day_today'>Today</p>
+        <p class='day_cloud'>{{this.weather.0.desription}}</p>
+        <span class='day_temperature'>{{this.main.temp}} &#8451;</span>
+        <div class='day_all-temprature'>
+          <span class='day_temperature-hight'>{{this.main.temp_min}}
+            &#8451;</span>
+          -
+          <span class='day_temperature-day'>{{this.main.temp_max}}
+            &#8451;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
