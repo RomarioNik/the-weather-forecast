@@ -13,13 +13,20 @@ const COUNTRY = 'ua';
 export function fetchCityWeather(cityName) {
   return fetch(
     `${BASE_URL}weather?q=${cityName}&appid=${API}&lang=${COUNTRY}&units=${UNITS}`
-  )
-    .then()
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
+  ).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
 
-      return response.json();
-    });
+    return response.json();
+  });
+}
+
+export function fetchIp() {
+  return fetch('https://ipinfo.io/json?token=8851da7fd8c9f0').then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
 }

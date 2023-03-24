@@ -1,15 +1,32 @@
 <header class="header">
   <div class="header_container container">
     <a class="header_logo" href="#">The Weather Forecast</a>
-    <form class="header_form form">
-      <input
-        class="form_query"
-        type="text"
-        name="query"
-        placeholder="Location"
-      />
-      <button class="form_button" type="submit">Show weather</button>
-    </form>
+
+    <div>
+      <form class="header_form form">
+        <input
+          class="form_query"
+          type="text"
+          name="query"
+          placeholder="Location"
+          required
+        />
+        <button class="form_button" type="submit">Show weather</button>
+      </form>
+
+      <ul class="header_city-list">
+        <li class="header_city-item">
+          <button class="header_city-button">Kyiv</button>
+        </li>
+        <li class="header_city-item">
+          <button class="header_city-button">Kharkiv</button>
+        </li>
+        <li class="header_city-item">
+          <button class="header_city-button">London</button>
+        </li>
+      </ul>
+    </div>
+
     <button class="header_button" type="button">&#8457;</button>
   </div>
 </header>

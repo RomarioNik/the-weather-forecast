@@ -7,7 +7,7 @@
 .header_container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .header_logo {
@@ -24,18 +24,36 @@
 .form_query {
   padding-left: 10px;
   padding-right: 10px;
-  height: 40px;
+  height: 30px;
   border: 1px solid #c0c0c0;
   border-radius: 7px 0 0 7px;
 }
 
 .form_button {
-  padding: 10px;
+  padding: 5px;
   border-top: 1px solid #c0c0c0;
   border-right: 1px solid #c0c0c0;
   border-bottom: 1px solid #c0c0c0;
   border-left: none;
   border-radius: 0 7px 7px 0;
+}
+
+.header_city-list {
+  display: flex;
+  gap: 10px;
+
+  font-size: 12px;
+  color: #cfcfcf;
+}
+
+.header_city-item {
+  line-height: 1.8;
+}
+
+.header_city-button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted #9d9d9d;
 }
 
 .header_button {
@@ -45,5 +63,5 @@
   width: 30px;
   height: 30px;
   border: 1px solid #c0c0c0;
-  border-radius: 50%;
+  border-radius: 7px;
 }
