@@ -3,7 +3,8 @@ import weatherTemplate from './templates/all-day.hbs';
 import cityListTemplate from './templates/city-list.hbs';
 import getRsfs from './js/refs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-const Handlebars = require('parcel-transformer-hbs');
+// const Handlebars = require('parcel-transformer-hbs');
+// import hbs from 'handlebars-inline-precompile';
 
 const refs = getRsfs();
 
