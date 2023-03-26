@@ -19,13 +19,11 @@
   <div class='day_temperature-wrap'>
     <p class='day_today'>Today</p>
     <p class='day_cloud'>{{this.weather.0.desription}}</p>
-    <span class='day_temperature'>{{this.main.temp}} &#8451;</span>
+    <span class='day_temperature'>{{temp this.main.temp}}</span>
     <div class='day_all-temprature'>
-      <span class='day_temperature-hight'>{{this.main.temp_min}}
-        &#8451;</span>
+      <span class='day_temperature-hight'>{{mintemp this.main.temp_min}}</span>
       -
-      <span class='day_temperature-day'>{{this.main.temp_max}}
-        &#8451;</span>
+      <span class='day_temperature-day'>{{maxtemp this.main.temp_max}}</span>
     </div>
   </div>
 </div>
