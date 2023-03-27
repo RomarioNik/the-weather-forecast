@@ -39,16 +39,6 @@
   box-shadow: var(--box-shadow);
 }
 
-.day_wind {
-}
-
-.day_rain {
-}
-
-.day_wind-count,
-.day_wind-count {
-}
-
 .day_temperature-wrap {
   padding: 20px;
   display: flex;
@@ -57,7 +47,6 @@
 
   border: 1px solid #c0c0c0;
   border-radius: 20px;
-  // background-color: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
   background-color: var(--bg-item);
   box-shadow: var(--box-shadow);
 }
@@ -66,9 +55,6 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 1.1;
-}
-
-.day_img {
 }
 
 .day_cloud {
@@ -88,10 +74,4 @@
   font-size: 26px;
   font-weight: 500;
   line-height: 1.1;
-}
-
-.day_temperature-hight {
-}
-
-.day_temperature-day {
 }

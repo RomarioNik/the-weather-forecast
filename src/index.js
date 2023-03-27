@@ -80,7 +80,6 @@ function getCityWeather(city) {
   weatherForecast
     .fetchCityWeather(city, unit)
     .then(weather => {
-      console.log(weather);
       renderWeathertemplate(weather);
       getImage(weather.name);
       setCityToLocalStorage(changeFirstLetterToUpperCase(city));
@@ -97,7 +96,6 @@ function getImage(city) {
   bgImage
     .fetchImage(city)
     .then(image => {
-      console.log(image);
       renderImageBg(image);
     })
     .catch(err => console.log(err));
