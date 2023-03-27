@@ -76,8 +76,9 @@ function handleSubmitForm(e) {
 }
 
 function getCityWeather(city) {
+  const unit = getTempUnit();
   weatherForecast
-    .fetchCityWeather(city, (unit = getTempUnit()))
+    .fetchCityWeather(city, unit)
     .then(weather => {
       console.log(weather);
       renderWeathertemplate(weather);
