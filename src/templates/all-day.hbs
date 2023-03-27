@@ -1,29 +1,27 @@
 <h1 class='visually-hidden'>The Weather Forecast</h1>
 
-<div class='day_wrap'>
-  <div class='day_location-wrap'>
-    <div class='day_city-and-date'>
-      <h2 class='day_location'>{{this.name}}</h2>
-      <p class='day_date'>Monday, May 23</p>
-    </div>
-    <div class='day_weather'>
-      <p class='day_wind'>
-        Wind:
-        <span class='day_wind-count'>{{this.wind.speed}}</span>km/h
-      </p>
-      <p class='day_rain'>Humidity:
-        <span class='day_rain-count'>{{this.main.humidity}}</span>%</p>
-    </div>
+<div class='day_location-wrap'>
+  <div class='day_city-and-date'>
+    <h2 class='day_location'>{{this.name}}</h2>
+    {{!-- {{! <p class='day_date'>Monday, May 23</p> }} --}}
   </div>
+  <div class='day_weather'>
+    <p class='day_wind'>
+      Wind:
+      <span class='day_wind-count'>{{wind this.wind.speed}}</span>
+    </p>
+    <p class='day_rain'>Humidity:
+      <span class='day_rain-count'>{{this.main.humidity}}</span>%</p>
+  </div>
+</div>
 
-  <div class='day_temperature-wrap'>
-    <p class='day_today'>Today</p>
-    <p class='day_cloud'>{{this.weather.0.desription}}</p>
-    <span class='day_temperature'>{{temp this.main.temp}}</span>
-    <div class='day_all-temprature'>
-      <span class='day_temperature-hight'>{{mintemp this.main.temp_min}}</span>
-      -
-      <span class='day_temperature-day'>{{maxtemp this.main.temp_max}}</span>
-    </div>
+<div class='day_temperature-wrap'>
+  <p class='day_today'>Today</p>
+  <p class='day_cloud'>{{this.weather.0.description}}</p>
+  <span class='day_temperature'>{{temp this.main.temp}}</span>
+  <div class='day_all-temprature'>
+    <span class='day_temperature-hight'>{{mintemp this.main.temp_min}}</span>
+    <span>&nbsp;-&nbsp;</span>
+    <span class='day_temperature-day'>{{maxtemp this.main.temp_max}}</span>
   </div>
 </div>

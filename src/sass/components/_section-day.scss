@@ -1,19 +1,12 @@
-.page_day {
-}
-
-.day {
-}
-
 .day_wrap {
   display: flex;
   justify-content: space-between;
   padding: 50px 10px;
 
-  // border: 1px solid #c0c0c0;
-  // border-radius: 7px;
-}
-
-.day_location-wrap {
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  opacity: 0.8;
 }
 
 .day_city-and-date {
@@ -22,6 +15,8 @@
 
   border: 1px solid #c0c0c0;
   border-radius: 20px;
+  background-color: var(--bg-item);
+  box-shadow: var(--box-shadow);
 }
 
 .day_location {
@@ -40,6 +35,8 @@
   max-width: 200px;
   border: 1px solid #c0c0c0;
   border-radius: 20px;
+  background-color: var(--bg-item);
+  box-shadow: var(--box-shadow);
 }
 
 .day_wind {
@@ -60,11 +57,14 @@
 
   border: 1px solid #c0c0c0;
   border-radius: 20px;
-  background-color: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
+  // background-color: linear-gradient(317.63deg, #353589 -7.42%, #9a9aff 120.45%);
+  background-color: var(--bg-item);
+  box-shadow: var(--box-shadow);
 }
 
 .day_today {
   font-size: 20px;
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -76,6 +76,7 @@
 }
 
 .day_temperature {
+  text-align: center;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.1;

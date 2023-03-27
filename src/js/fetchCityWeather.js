@@ -1,14 +1,3 @@
-// const API = 'e1868383596238a03a9fcf1a7f12bf30';
-// const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
-// const UNITS = localStorage.getItem('weatherunit') || 'metric';
-// const COUNTRY = 'ua';
-// faringate units=imperial metric
-// const options = {
-//     aplications: {
-//         header: '',
-//     }
-// }
-
 export class Weather {
   #BASE_URL = 'https://api.openweathermap.org/data/2.5/';
   #API = 'e1868383596238a03a9fcf1a7f12bf30';
@@ -39,24 +28,22 @@ export class Ip {
     });
   }
 }
+export class BackgroundImage {
+  #BASE_URL = 'https://api.unsplash.com/photos';
+  #API = 'Gr-Tp-fAy1z5zJ7f1u7dTi3-i6PHLzfDrEZ4tA-e_EY';
 
-// export function fetchCityWeather(cityName) {
-//   return fetch(
-//     `${BASE_URL}weather?q=${cityName}&appid=${API}&lang=${COUNTRY}&units=${UNITS}`
-//   ).then(response => {
-//     if (!response.ok) {
-//       throw new Error(response.status);
-//     }
-
-//     return response.json();
-//   });
-// }
-
-// export function fetchIp() {
-//   return fetch('https://ipinfo.io/json?token=8851da7fd8c9f0').then(response => {
-//     if (!response.ok) {
-//       throw new Error(response.status);
-//     }
-//     return response.json();
-//   });
-// }
+  fetchImage(city) {
+    return fetch(
+      `${
+        this.#BASE_URL
+      }/random?query=${city}&count=1&orientation=landscape&client_id=${
+        this.#API
+      }`
+    ).then(res => {
+      if (!res.ok) {
+        throw new Error(res.arrayBuffer.status);
+      }
+      return res.json();
+    });
+  }
+}

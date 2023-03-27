@@ -11,10 +11,20 @@
 }
 
 .header_logo {
-  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+
+  line-height: 0.8;
+  color: #1e415e;
 }
 
-.header_form {
+.header_logo-weather {
+  font-size: 13px;
+}
+
+.header_logo-now {
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .form {
@@ -36,6 +46,16 @@
   border-bottom: 1px solid #c0c0c0;
   border-left: none;
   border-radius: 0 7px 7px 0;
+}
+
+.form_button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 19px;
+  height: 18px;
+  fill: #616161;
 }
 
 .header_city-list {

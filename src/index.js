@@ -1,4 +1,4 @@
-import { Weather, Ip } from './js/fetchCityWeather.js';
+import { Weather, Ip, BackgroundImage } from './js/fetchCityWeather.js';
 import weatherTemplate from './templates/all-day.hbs';
 import cityListTemplate from './templates/city-list.hbs';
 import getRsfs from './js/refs';
@@ -15,6 +15,7 @@ refs.temprBtn.addEventListener('click', handleClickTempButton);
 
 const weatherForecast = new Weather();
 const getCityFromIp = new Ip();
+const bgImage = new BackgroundImage();
 
 Notify.init({
   width: '300px',
@@ -80,6 +81,7 @@ function getCityWeather(city) {
     .then(weather => {
       console.log(weather);
       renderWeathertemplate(weather);
+      getImage(weather.name);
       setCityToLocalStorage(changeFirstLetterToUpperCase(city));
       sessionStorage.setItem('citynow', city);
     })
@@ -88,6 +90,20 @@ function getCityWeather(city) {
         "We don't have weather from other planets. Try another city :)"
       );
     });
+}
+
+function getImage(city) {
+  bgImage
+    .fetchImage(city)
+    .then(image => {
+      console.log(image);
+      renderImageBg(image);
+    })
+    .catch(err => console.log(err));
+}
+
+function renderImageBg(image) {
+  refs.page.style.backgroundImage = `url(${image[0].urls.regular})`;
 }
 
 function handleClickTempButton() {
@@ -118,27 +134,29 @@ function renderTempButton() {
 }
 
 Handlebars.registerHelper('mintemp', function (min) {
-  let value = min.toFixed();
-  const unit = getTempUnit();
-  // console.log((value += unit === 'metric' ? '\u2109' : '\u2103'));
-  return (value += unit === 'metric' ? '\u2103' : '\u2109');
+  return handlebarsRegister(min);
 });
 
 Handlebars.registerHelper('maxtemp', function (max) {
-  let value = max.toFixed();
-  const unit = getTempUnit();
-  return (value += unit === 'metric' ? '\u2103' : '\u2109');
+  return handlebarsRegister(max);
 });
 
 Handlebars.registerHelper('temp', function (temp) {
-  let value = temp.toFixed();
-  const unit = getTempUnit();
-  return (value += unit === 'metric' ? '\u2103' : '\u2109');
+  return handlebarsRegister(temp);
 });
 
-// Handlebars.registerHelper('unit', function (unit) {
-//   return unit = unit;
-// });
+Handlebars.registerHelper('wind', function (wind) {
+  let value = wind.toFixed(1);
+  const unit = getTempUnit();
+  return (value += unit === 'metric' ? ' m/sec' : ' m/h');
+  // Metric: meter/sec, Imperial: miles/hour
+});
+
+function handlebarsRegister(num) {
+  let value = num.toFixed();
+  const unit = getTempUnit();
+  return (value += unit === 'metric' ? '\u2103' : '\u2109');
+}
 
 function renderWeathertemplate(weather) {
   refs.page.innerHTML = weatherTemplate(weather);
@@ -157,6 +175,7 @@ function setCityToLocalStorage(city) {
 
   listOFCity.unshift(city);
   localStorage.setItem('weathercity', JSON.stringify(listOFCity));
+  renderCityList();
 }
 
 function handleButtonClickCityList(e) {
