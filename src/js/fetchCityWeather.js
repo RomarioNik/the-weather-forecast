@@ -1,6 +1,6 @@
 export class Weather {
   #BASE_URL = 'https://api.openweathermap.org/data/2.5/';
-  #API = 'e1868383596238a03a9fcf1a7f12bf30';
+  #API = ''; // need key
 
   fetchCityWeather(cityName, unit) {
     return fetch(
